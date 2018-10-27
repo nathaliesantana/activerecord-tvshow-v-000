@@ -20,4 +20,8 @@ class Show < ActiveRecord::Base
     self.sum(:rating)
   end
 
+  def self.popular_shows
+    self.where("rating > ?", 4)
+  end
+
 end
